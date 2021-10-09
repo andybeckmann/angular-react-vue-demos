@@ -57,7 +57,7 @@ button {
 		background: #000000;
 	}
 
-	&.disabled {
+	&:disabled, &[disabled]{
 		opacity: 0.25;
 		cursor: not-allowed;
 	}
