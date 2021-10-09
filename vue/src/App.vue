@@ -48,9 +48,6 @@
 		},
 
 		methods: {
-			/**
-			 * Disable submit button for empty input
-			 */
 			isButtonDisabled () {
 				if (this.description == '') {
 					return true
@@ -59,9 +56,6 @@
 				}
 			},
 
-			/**
-			 * Adds item to todos[]
-			 */
 			addItem () {
 				if (this.description != '') {
 					this.todos.push(
@@ -71,23 +65,25 @@
 						}
 					)
 					this.description = ''
+					localStorage.setItem('todos', JSON.stringify(this.todos));
 				}
 			},
 
-			/**
-			 * Deletes item from todos[]
-			 */
 			deleteItem (index) {
 				this.todos.splice(index, 1)
+				localStorage.setItem('todos', JSON.stringify(this.todos));
 			},
 
-			/**
-			 * Mark item as complete in todos[]
-			 */
 			toggleItemStatus (index, description) {
 				this.todos[index]['description'] = description
 				this.todos[index]['completed'] = !this.todos[index]['completed']
+				localStorage.setItem('todos', JSON.stringify(this.todos));
 			}
+		},
+
+		mounted () {
+			const storedItems = localStorage.getItem('todos')
+			this.todos = JSON.parse(storedItems)
 		}
 	}
 </script>
