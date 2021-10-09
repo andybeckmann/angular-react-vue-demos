@@ -2,7 +2,6 @@ import { React, Component, createRef } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 export default class App extends Component {
-
 	constructor(props) {
 		super(props);
 		this.state = { 
@@ -14,15 +13,6 @@ export default class App extends Component {
 		this.onChange = this.onChange.bind(this);
 	}
 
-	add () {
-		this.props.onButtonClick(this.state.value);
-		this.setState({ input: '' })
-	}
-
-	onChange (e) {
-		this.SetState({ input: e.target.value })
-	}
-
 	componentDidMount () {
 		const storedItems = localStorage.getItem('todos');
 		this.setState({
@@ -30,12 +20,13 @@ export default class App extends Component {
 		})
 	}
 
-	componentDidUpdate () {
-		//
+	add () {
+		this.props.onButtonClick(this.state.value);
+		this.setState({ input: '' })
 	}
 
-	isButtonDisabled() {
-		//
+	onChange (e) {
+		this.SetState({ input: e.target.value })
 	}
 
 	addItem (event) {
@@ -52,7 +43,6 @@ export default class App extends Component {
 		this.setState({
 			input: ''
 		})
-		//this.description.current.value = ''
 	}
 
 	deleteItem(index) {
