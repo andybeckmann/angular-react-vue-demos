@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 
 function App() {
+
 	const [todos, updateTodos] = useState([]);
 	const itemDescription = useRef();
 
@@ -11,35 +12,14 @@ function App() {
 		updateTodos(storedItems ? JSON.parse(storedItems) : [])
 	}, []);
 
-	const todoList = todos.map((item, index) => 
-		(
-			<li key={index}>
-				<button></button>
-				<div className="app--main--items-item-text">
-					{item.description}
-				</div> 
-				<button 
-					className="delete"
-					key={index}
-					onClick={() => deleteItem(index)}
-				>
-					&times;
-				</button>
-			</li>
-		)
-	);
-	
-
-	/**
-	 * Disable submit button for empty input
-	 */
 	function isButtonDisabled() {
-
+		if (itemDescription.current.value = '') {
+			return false
+		} else {
+			return true
+		}
 	}
 
-	/**
-	 * Adds item to todos[]
-	 */
 	function addItem(event) {
 		event.preventDefault();
 		const newItem = {
@@ -52,20 +32,18 @@ function App() {
 		itemDescription.current.value = ''
 	}
 
-	/**
-	 * Deletes item from todos[]
-	 */
-	async function deleteItem(index) {
+	function deleteItem(index) {
 		todos.splice(index, 1);
-		updateTodos(todos);
-		localStorage.setItem('todos', JSON.stringify(todos));
+		const updatedList = [...todos]
+		updateTodos(updatedList);
+		localStorage.setItem('todos', JSON.stringify(updatedList));
 	}
 
-	/**
-	 * Mark item as complete in todos[]
-	 */
 	function toggleItemStatus(index) {
-		//todos[index][1] = !todos[index][1]
+		todos[index][1] = !todos[index][1]
+		const updatedList = [...todos]
+		updateTodos(updatedList);
+		localStorage.setItem('todos', JSON.stringify(updatedList));
 	}
 
 	return (
@@ -76,11 +54,31 @@ function App() {
 					<label>Add a task</label>
 					<div>
 						<input ref={itemDescription} placeholder="So, what's next?" />
-						<button>Add</button>
+						<button 
+							disabled={itemDescription === ""}
+						>
+							Add
+						</button>
 					</div>
 				</form>
 				<ul className="app--main--items">
-					{todoList}
+					{todos.map((item, index) => (
+					<li key={index} className={ item[1] ? "completed" : ''}>
+						<button
+							onClick={() => toggleItemStatus(index)}
+							>
+						</button>
+						<div className="app--main--items-item-text">
+							{item.description}
+						</div> 
+						<button 
+							className="delete"
+							onClick={() => deleteItem(index)}
+						>
+							&times;
+						</button>
+					</li>
+					))}
 				</ul>
 			</div>
 		</div>
