@@ -18,6 +18,7 @@ Each app uses the same CSS styles and HTML markup.
 | Total packages | 1337 packages |
 | Project install tim | 17s |
 | Project build time | 5s |
+
 *This example uses the Options API instead of the Composition API*
 
 ### Screenshot
