@@ -43,9 +43,9 @@ A description goes here.
 
 ### Files (3)
 
-1. […/angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/App.component.ts)
-2. […/angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/App.component.html)
-3. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/App.component.scss)
+1. […/angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.ts)
+2. […/angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.html)
+3. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
 
 ### Details
 
