@@ -1,6 +1,6 @@
 # Angular-Vue-React-demos
 
-A collection of demo applactions for Angular.js, Vue.js, and React.js.
+A collection of demo applications for Angular.js, Vue.js, and React.js.
 
 Each app uses the same CSS styles and HTML markup.
 
