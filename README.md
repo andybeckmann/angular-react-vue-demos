@@ -6,7 +6,7 @@ This repository contains a sample todo list application built three times using 
 
 ![Vue Todo App Screenshot](/screenshot-vue.png?raw=true)
 
-| Measurement  | Data |
+| Details |  |
 |:--|:--|
 | JavaScript & HTML | 89 lines |
 | Total packages | 1337 packages |
@@ -115,7 +115,7 @@ This repository contains a sample todo list application built three times using 
 
 ![React Todo App Screenshot](/screenshot-react.png?raw=true)
 
-| Measurement  | Data |
+| Details |  |
 |:--|:--|
 | JavaScript & HTML | 110 lines |
 | Total packages | 1996 packages |
@@ -244,7 +244,7 @@ export default class App extends Component {
 
 ## Angular
 
-| Measurement  | Data |
+| Details |  |
 |:--|:--|
 | JavaScript & HTML	| 98 lines |
 | Total packages | 0 packages |
