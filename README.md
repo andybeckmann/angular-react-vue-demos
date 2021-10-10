@@ -10,6 +10,8 @@ A description goes here.
 
 ### Details
 
+| Measurement  | Data |
+|:--|:--|
 | JavaScript & HTML | 89 lines |
 | Total packages | 1337 packages |
 | Project install tim | 17s |
@@ -28,8 +30,8 @@ A description goes here.
 2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
 
 ### Details
-| Measurement  | |
-|:--|---|
+| Measurement  | Data |
+|:--|:--|
 | JavaScript & HTML | 110 lines |
 | Total packages | 1996 packages |
 | Project install time | 26s |
@@ -51,6 +53,8 @@ A description goes here.
 
 ### Details
 
+| Measurement  | Data |
+|:--|:--|
 | JavaScript & HTML	| 0 lines |
 | Total packages | 0 packages |
 | Project install time | 0s |
