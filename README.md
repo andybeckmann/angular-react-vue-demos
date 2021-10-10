@@ -6,7 +6,7 @@ A description goes here.
 
 ### Files (1)
 
-1. […/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/vue/src/app.vue)
+1. […/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/tree/main/vue/src/app.vue)
 
 ### Details
 
@@ -24,8 +24,8 @@ A description goes here.
 
 ### Files (2)
 
-1. […/react/src/app.js](https://github.com/andybeckmann/angular-vue-react/react/src/app.js)
-2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/react/src/app.js)
+1. […/react/src/app.js](https://github.com/andybeckmann/angular-vue-react/tree/main/react/src/app.js)
+2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/tree/main/react/src/app.js)
 
 ### Details
 
@@ -43,9 +43,9 @@ A description goes here.
 
 ### Files (3)
 
-1. […/angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/angular/src/app/app.component.ts)
-2. […/angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/angular/src/app/app.component.html)
-3. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/angular/src/app/app.component.scss)
+1. […/angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/tree/main/angular/src/app/app.component.ts)
+2. […/angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/tree/main/angular/src/app/app.component.html)
+3. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/tree/main/angular/src/app/app.component.scss)
 
 ### Details
 
