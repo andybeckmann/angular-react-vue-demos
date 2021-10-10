@@ -6,10 +6,6 @@ Each app uses the same CSS styles and HTML markup.
 
 ## Vue
 
-### Files (1)
-
-1. […/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
-
 ### Details
 
 | Measurement  | Data |
@@ -24,6 +20,11 @@ Each app uses the same CSS styles and HTML markup.
 ### Screenshot
 
 ![Vue Todo App Screenshot](/screenshot-vue.png?raw=true)
+
+### Files (1)
+
+[…/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
+
 
 ## React
 
@@ -48,11 +49,119 @@ Each app uses the same CSS styles and HTML markup.
 
 ## Angular
 
-### Files (3)
+### Files (4)
 
-1. […/angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.ts)
-2. […/angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.html)
-3. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
+1. [./angular/src/app/app.module.ts](https://github.com/andybeckmann/angular-vue-react-demos/blob/main/angular/src/app.app.component.ts)
+
+```javascript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+	declarations: [
+		AppComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+2. [./angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.ts)
+
+```javascript
+import { Component } from '@angular/core';
+
+@Component({
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.scss']
+})
+
+export class AppComponent {
+	todos: Array<any> = [];
+	input: String = '';
+
+	ngOnInit() {
+		const storedData = localStorage.getItem('todos');
+		this.todos = JSON.parse(storedData as string) || []
+	}
+
+	addItem () {
+		const newItem = {
+			description: this.input,
+			completed: false
+		};
+		this.todos.push(newItem)
+		localStorage.setItem('todos', JSON.stringify(this.todos));
+		this.input = ''
+	}
+
+	deleteItem(index: number) {
+		this.todos.splice(index, 1);
+		localStorage.setItem('todos', JSON.stringify(this.todos));
+	}
+
+	toggleItemStatus(index: number) {
+		this.todos[index][1] = !this.todos[index][1];
+		localStorage.setItem('todos', JSON.stringify(this.todos));
+	}
+}
+```
+
+3. [./angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.html)
+
+```html
+<div class="app">
+	<div class="app--main">
+		<img src="/assets/logo.svg" class="app--logo" alt="Logo" />
+		<form class="app--main--add-item" (ngSubmit)="addItem()">
+			<label>Add a task</label>
+			<div>
+				<input
+					name="input"
+					[(ngModel)]="input"
+					placeholder="So, what's next?"
+				>
+				<button
+					[disabled]="!(input.length>0)"
+				>
+				Add
+				</button>
+			</div>
+		</form>
+		<ul class="app--main--items">
+			<li 
+				*ngFor="let item of todos; let i = index"
+				[attr.data-index]="i" 
+				[ngClass]="{ 'completed' : item[1] == true }"
+			>
+				<button
+					(click)="toggleItemStatus(i)"
+				></button>
+				<div class="app--main--items-item-text">
+					{{ item.description }}
+				</div>
+				<button
+					class="delete"
+					(click)="deleteItem(i)"
+				>
+					&times;
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+```
+
+4. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
 
 ### Details
 
