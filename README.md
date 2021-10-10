@@ -28,6 +28,7 @@ A description goes here.
 2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
 
 ### Details
+|[]()|[]()|
 |---|---|
 | JavaScript & HTML | 110 lines |
 | Total packages | 1996 packages |
