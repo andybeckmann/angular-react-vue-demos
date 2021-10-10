@@ -1,12 +1,8 @@
 # Angular-Vue-React-demos
 
-A collection of demo applications for Angular.js, Vue.js, and React.js.
-
-Each app uses the same CSS styles and HTML markup.
+This repository contains a sample todo list application built three times using Angular.js, Vue.js, and React.js. Each app uses the same CSS styles and HTML markup, and saves the data to localStorage.
 
 ## Vue
-
-### Details
 
 | Measurement  | Data |
 |:--|:--|
@@ -25,15 +21,101 @@ Each app uses the same CSS styles and HTML markup.
 
 […/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
 
+```javascript
+<template>
+  <div id="app">
+    <div class="app--main">
+      <img src="./logo.svg" class="app--logo" />
+      <form class="app--main--add-item" @submit.prevent="addItem">
+        <label>Add a task</label>
+        <div>
+          <input v-model="description" placeholder="So, what's next?">
+          <button
+            :class="{ 'disabled' : isButtonDisabled() }"
+          >Add</button>
+        </div>
+      </form>
+      <ul class="app--main--items">
+        <li 
+          v-for="(item, index) in todos" 
+          :key="index" 
+          :index="index"
+          ref="item" 
+          :class="{ 'completed' : item.completed }">
+          <button 
+            @click="toggleItemStatus(index, item.description, item.completed)" 
+            :data-key="item" 
+            :class="{ 'completed' : item.completed }"
+          ></button>
+          <div class="app--main--items-item-text">
+            {{ item.description }}
+          </div>
+          <button 
+            class="delete"
+            @click="deleteItem(index)" 
+            :data-key="item"
+          >&times;
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        description: '',
+        todos: []
+      }
+    },
+
+    methods: {
+      isButtonDisabled () {
+        if (this.description == '') {
+          return true
+        } else {
+          return false
+        }
+      },
+
+      addItem () {
+        if (this.description != '') {
+          this.todos.push(
+            { 
+              description: this.description,
+              completed: false
+            }
+          )
+          this.description = ''
+          localStorage.setItem('todos', JSON.stringify(this.todos));
+        }
+      },
+
+      deleteItem (index) {
+        this.todos.splice(index, 1)
+        localStorage.setItem('todos', JSON.stringify(this.todos));
+      },
+
+      toggleItemStatus (index, description) {
+        this.todos[index]['description'] = description
+        this.todos[index]['completed'] = !this.todos[index]['completed']
+        localStorage.setItem('todos', JSON.stringify(this.todos));
+      }
+    },
+
+    mounted () {
+      const storedItems = localStorage.getItem('todos')
+      this.todos = JSON.parse(storedItems)
+    }
+  }
+</script>
+```
+
 
 ## React
 
-### Files (2)
-
-1. […/react/src/app.js](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
-2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
-
-### Details
 | Measurement  | Data |
 |:--|:--|
 | JavaScript & HTML | 110 lines |
@@ -47,11 +129,21 @@ Each app uses the same CSS styles and HTML markup.
 
 ![React Todo App Screenshot](/screenshot-react.png?raw=true)
 
+### Files (2)
+
+1. […/react/src/app.js](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
+
+```javascript
+
+```
+
+2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
+
 ## Angular
 
 | Measurement  | Data |
 |:--|:--|
-| JavaScript & HTML	| 0 lines |
+| JavaScript & HTML	| 98 lines |
 | Total packages | 0 packages |
 | Project install time | 0s |
 | Project build time | 0s |
