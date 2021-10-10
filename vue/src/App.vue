@@ -158,10 +158,6 @@
 			width: auto;
 		}
 
-		&:hover {
-			background: #000000;
-		}
-
 		&.disabled {
 			opacity: 0.25;
 			cursor: not-allowed;

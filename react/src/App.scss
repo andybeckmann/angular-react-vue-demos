@@ -53,10 +53,6 @@ button {
 		width: auto;
 	}
 
-	&:hover {
-		background: #000000;
-	}
-
 	&:disabled, &[disabled]{
 		opacity: 0.25;
 		cursor: not-allowed;
