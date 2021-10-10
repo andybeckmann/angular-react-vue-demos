@@ -34,6 +34,7 @@ A description goes here.
 | Total packages | 1996 packages |
 | Project install time | 26s |
 | Project build time | 9s |
+
 *This example uses class-based components instead of function-based components*
 
 ### Screenshot
