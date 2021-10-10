@@ -4,6 +4,8 @@ This repository contains a sample todo list application built three times using 
 
 ## Vue
 
+![Vue Todo App Screenshot](/screenshot-vue.png?raw=true)
+
 | Measurement  | Data |
 |:--|:--|
 | JavaScript & HTML | 89 lines |
@@ -13,13 +15,9 @@ This repository contains a sample todo list application built three times using 
 
 *This example uses the Options API instead of the Composition API*
 
-### Screenshot
-
-![Vue Todo App Screenshot](/screenshot-vue.png?raw=true)
-
 ### Code (1 file)
 
-[…/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
+[./vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
 
 ```vue
 <template>
@@ -115,6 +113,8 @@ This repository contains a sample todo list application built three times using 
 
 ## React
 
+![React Todo App Screenshot](/screenshot-react.png?raw=true)
+
 | Measurement  | Data |
 |:--|:--|
 | JavaScript & HTML | 110 lines |
@@ -122,15 +122,11 @@ This repository contains a sample todo list application built three times using 
 | Project install time | 26s |
 | Project build time | 9s |
 
-*This example uses class-based components instead of function-based components*
-
-### Screenshot
-
-![React Todo App Screenshot](/screenshot-react.png?raw=true)
+*This example is a class-based component instead of being function-based*
 
 ### Code (2 files)
 
-1. […/react/src/app.js](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
+1. [./react/src/app.js](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
 
 ```jsx
 import { React, Component, createRef } from 'react';
@@ -244,7 +240,7 @@ export default class App extends Component {
 }
 ```
 
-2. […/react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
+2. [./react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
 
 ## Angular
 
@@ -370,5 +366,5 @@ export class AppComponent {
 </div>
 ```
 
-4. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
+4. [./angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
 
