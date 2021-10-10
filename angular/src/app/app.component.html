@@ -1,28 +1,40 @@
 <div class="app">
-  <div class="app--main">
-    <img src="/assets/logo.svg" class="app--logo" alt="Logo" />
-    <form class="app--main--add-item">
-      <label>Add a task</label>
-      <div>
-        <input />
-        <button
-          
-        >Add</button>
-      </div>
-    </form>
-    <ul class="app--main--items">
-      <li>
-        <button   
-        ></button>
-        <div class="app--main--items-item-text">
-          Placeholder item
-        </div>
-        <button
-          class="delete"
-        >
-          &times;
-        </button>
-      </li>
-    </ul>
-  </div>
+	<div class="app--main">
+		<img src="/assets/logo.svg" class="app--logo" alt="Logo" />
+		<form class="app--main--add-item" (ngSubmit)="addItem()">
+			<label>Add a task</label>
+			<div>
+				<input
+					name="input"
+					[(ngModel)]="input"
+					placeholder="So, what's next?"
+				>
+				<button
+					[disabled]="!(input.length>0)"
+				>
+				Add
+				</button>
+			</div>
+		</form>
+		<ul class="app--main--items">
+			<li 
+				*ngFor="let item of todos; let i = index"
+				[attr.data-index]="i" 
+				[ngClass]="{ 'completed' : item[1] == true }"
+			>
+				<button
+					(click)="toggleItemStatus(i)"
+				></button>
+				<div class="app--main--items-item-text">
+					{{ item.description }}
+				</div>
+				<button
+					class="delete"
+					(click)="deleteItem(i)"
+				>
+					&times;
+				</button>
+			</li>
+		</ul>
+	</div>
 </div>
