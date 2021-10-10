@@ -49,6 +49,17 @@ Each app uses the same CSS styles and HTML markup.
 
 ## Angular
 
+| Measurement  | Data |
+|:--|:--|
+| JavaScript & HTML	| 0 lines |
+| Total packages | 0 packages |
+| Project install time | 0s |
+| Project build time | 0s |
+
+### Screenshot
+
+![Angular Todo App Screenshot](/screenshot-angular.png?raw=true)
+
 ### Files (4)
 
 1. [./angular/src/app/app.module.ts](https://github.com/andybeckmann/angular-vue-react-demos/blob/main/angular/src/app.app.component.ts)
@@ -61,15 +72,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 @NgModule({
-	declarations: [
-		AppComponent
-	],
-	imports: [
-		BrowserModule,
-		FormsModule
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
@@ -80,39 +91,39 @@ export class AppModule { }
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 
 export class AppComponent {
-	todos: Array<any> = [];
-	input: String = '';
+  todos: Array<any> = [];
+  input: String = '';
 
-	ngOnInit() {
-		const storedData = localStorage.getItem('todos');
-		this.todos = JSON.parse(storedData as string) || []
-	}
+  ngOnInit() {
+    const storedData = localStorage.getItem('todos');
+    this.todos = JSON.parse(storedData as string) || []
+  }
 
-	addItem () {
-		const newItem = {
-			description: this.input,
-			completed: false
-		};
-		this.todos.push(newItem)
-		localStorage.setItem('todos', JSON.stringify(this.todos));
-		this.input = ''
-	}
+  addItem () {
+    const newItem = {
+      description: this.input,
+      completed: false
+    };
+    this.todos.push(newItem)
+      localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.input = ''
+  }
 
-	deleteItem(index: number) {
-		this.todos.splice(index, 1);
-		localStorage.setItem('todos', JSON.stringify(this.todos));
-	}
+  deleteItem(index: number) {
+    this.todos.splice(index, 1);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 
-	toggleItemStatus(index: number) {
-		this.todos[index][1] = !this.todos[index][1];
-		localStorage.setItem('todos', JSON.stringify(this.todos));
-	}
+  toggleItemStatus(index: number) {
+    this.todos[index][1] = !this.todos[index][1];
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 }
 ```
 
@@ -120,59 +131,45 @@ export class AppComponent {
 
 ```html
 <div class="app">
-	<div class="app--main">
-		<img src="/assets/logo.svg" class="app--logo" alt="Logo" />
-		<form class="app--main--add-item" (ngSubmit)="addItem()">
-			<label>Add a task</label>
-			<div>
-				<input
-					name="input"
-					[(ngModel)]="input"
-					placeholder="So, what's next?"
-				>
-				<button
-					[disabled]="!(input.length>0)"
-				>
-				Add
-				</button>
-			</div>
-		</form>
-		<ul class="app--main--items">
-			<li 
-				*ngFor="let item of todos; let i = index"
-				[attr.data-index]="i" 
-				[ngClass]="{ 'completed' : item[1] == true }"
-			>
-				<button
-					(click)="toggleItemStatus(i)"
-				></button>
-				<div class="app--main--items-item-text">
-					{{ item.description }}
-				</div>
-				<button
-					class="delete"
-					(click)="deleteItem(i)"
-				>
-					&times;
-				</button>
-			</li>
-		</ul>
-	</div>
+  <div class="app--main">
+    <img src="/assets/logo.svg" class="app--logo" alt="Logo" />
+    <form class="app--main--add-item" (ngSubmit)="addItem()">
+      <label>Add a task</label>
+      <div>
+        <input
+          name="input"
+          [(ngModel)]="input"
+          placeholder="So, what's next?"
+        >
+        <button
+          [disabled]="!(input.length>0)"
+        >
+        Add
+        </button>
+      </div>
+    </form>
+    <ul class="app--main--items">
+      <li 
+        *ngFor="let item of todos; let i = index"
+        [attr.data-index]="i" 
+        [ngClass]="{ 'completed' : item[1] == true }"
+      >
+        <button
+          (click)="toggleItemStatus(i)"
+        ></button>
+        <div class="app--main--items-item-text">
+           {{ item.description }}
+        </div>
+        <button
+          class="delete"
+          (click)="deleteItem(i)"
+        &times;
+        </button>
+      </li>
+    </ul>
+  </div>
 </div>
 ```
 
 4. […/angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
-
-### Details
-
-| Measurement  | Data |
-|:--|:--|
-| JavaScript & HTML	| 0 lines |
-| Total packages | 0 packages |
-| Project install time | 0s |
-| Project build time | 0s |
-
-### Screenshot
-
-![Angular Todo App Screenshot](/screenshot-angular.png?raw=true)
 
