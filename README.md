@@ -21,7 +21,7 @@ This repository contains a sample todo list application built three times using 
 
 […/vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
 
-```javascript
+```vue
 <template>
   <div id="app">
     <div class="app--main">
@@ -156,7 +156,7 @@ This repository contains a sample todo list application built three times using 
 
 1. [./angular/src/app/app.module.ts](https://github.com/andybeckmann/angular-vue-react-demos/blob/main/angular/src/app.app.component.ts)
 
-```javascript
+```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -179,7 +179,7 @@ export class AppModule { }
 
 2. [./angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.ts)
 
-```javascript
+```typescript
 import { Component } from '@angular/core';
 
 @Component({
