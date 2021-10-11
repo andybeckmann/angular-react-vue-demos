@@ -17,7 +17,7 @@ This repository contains a sample todo list application built three times using 
 
 ### Code (1 file)
 
-[./vue/src/app.vue](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/vue/src/App.vue)
+1. [./vue/src/app.vue](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/vue/src/App.vue)
 
 ```vue
 <template>
