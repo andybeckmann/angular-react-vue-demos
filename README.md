@@ -1,4 +1,4 @@
-# Angular-React-Vue-demos
+# angular-react-vue-demos
 
 This repository contains a sample todo list application built three times using [Angular.js](https://github.com/angular) (v12), [React.js](https://github.com/facebook/react) (v17), and [Vue.js](https://github.com/vuejs/vue) (v2). Each app uses the same CSS styles and HTML markup, and saves the data to localStorage.
 
