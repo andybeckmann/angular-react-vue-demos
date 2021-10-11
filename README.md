@@ -17,7 +17,7 @@ This repository contains a sample todo list application built three times using 
 
 ### Code (1 file)
 
-[./vue/src/app.vue](https://github.com/andybeckmann/angular-vue-react/blob/main/vue/src/App.vue)
+[./vue/src/app.vue](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/vue/src/App.vue)
 
 ```vue
 <template>
@@ -126,7 +126,7 @@ This repository contains a sample todo list application built three times using 
 
 ### Code (2 files)
 
-1. [./react/src/app.js](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
+1. [./react/src/app.js](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/react/src/App.js)
 
 ```jsx
 import { React, Component, createRef } from 'react';
@@ -240,7 +240,7 @@ export default class App extends Component {
 }
 ```
 
-2. [./react/src/app.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/react/src/App.js)
+2. [./react/src/app.scss](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/react/src/App.js)
 
 ## Angular
 
@@ -249,7 +249,7 @@ export default class App extends Component {
 | JavaScript & HTML	| 98 lines |
 | Total packages | 1308 packages |
 | Project install time | 21s |
-| Project build time | 30ss |
+| Project build time | 30s |
 
 ### Screenshot
 
@@ -257,7 +257,7 @@ export default class App extends Component {
 
 ### Code (4 files)
 
-1. [./angular/src/app/app.module.ts](https://github.com/andybeckmann/angular-vue-react-demos/blob/main/angular/src/app.app.component.ts)
+1. [./angular/src/app/app.module.ts](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/angular/src/app.app.component.ts)
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -280,7 +280,7 @@ import { AppComponent } from './app.component';
 export class AppModule { }
 ```
 
-2. [./angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.ts)
+2. [./angular/src/app/app.component.ts](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/angular/src/app/app.component.ts)
 
 ```typescript
 import { Component } from '@angular/core';
@@ -322,7 +322,7 @@ export class AppComponent {
 }
 ```
 
-3. [./angular/src/app/app.component.html](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.html)
+3. [./angular/src/app/app.component.html](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/angular/src/app/app.component.html)
 
 ```html
 <div class="app">
@@ -366,5 +366,5 @@ export class AppComponent {
 </div>
 ```
 
-4. [./angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-vue-react/blob/main/angular/src/app/app.component.scss)
+4. [./angular/src/app/app.component.scss](https://github.com/andybeckmann/angular-react-vue-demos/blob/main/angular/src/app/app.component.scss)
 
